@@ -1,0 +1,46 @@
+@keyframes screen-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes dossier-in { from { opacity: 0; transform: perspective(900px) rotateX(-35deg) translateY(30px); transform-origin: top; } to { opacity: 1; transform: none; } }
+@keyframes shimmer-text { to { background-position: -200% 0; } }
+@keyframes sweep { 0%, 60% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-9px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(3px); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes pulse-glow { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+
+/* sello */
+@keyframes seal-left { to { transform: translate(-34px, 18px) rotate(-28deg); opacity: 0; } }
+@keyframes seal-right { to { transform: translate(34px, 22px) rotate(30deg); opacity: 0; } }
+/* solapa: gira 180º y pasa por detrás de la tarjeta a mitad de giro */
+@keyframes flap-open {
+  0% { transform: rotateX(0); z-index: 4; }
+  49% { z-index: 4; }
+  50% { z-index: 1; }
+  100% { transform: rotateX(180deg); z-index: 1; }
+}
+@keyframes card-rise { to { transform: translateY(-62%); } }
+@keyframes glow-on { 0% { opacity: 0; transform: scale(0.5); } 60% { opacity: 1; } 100% { opacity: 0.85; transform: scale(1.15); } }
+@keyframes env-zoom { 0% { transform: scale(1); filter: none; } 100% { transform: scale(1.35); filter: brightness(1.5) drop-shadow(0 0 40px #e8d49b); opacity: 0; } }
+@keyframes leave { to { opacity: 0; transform: translateY(-12px); } }
+
+/* destello de pista recuperada */
+@keyframes clue-flash { 0% { box-shadow: 0 0 0 0 rgba(232, 212, 155, 0.9); } 100% { box-shadow: 0 0 0 28px rgba(232, 212, 155, 0); } }
+@keyframes lid-open { 0% { transform: perspective(500px) rotateX(0); } 40% { transform: perspective(500px) rotateX(-70deg); } 100% { transform: perspective(500px) rotateX(0); } }
+@keyframes char-pop { 0% { transform: scale(0.2); opacity: 0; filter: brightness(3); } 60% { transform: scale(1.25); opacity: 1; } 100% { transform: scale(1); filter: none; } }
+
+/* caja fuerte */
+@keyframes dial-spin { 0% { transform: rotate(0); } 30% { transform: rotate(420deg); } 55% { transform: rotate(-200deg); } 100% { transform: rotate(540deg); } }
+@keyframes door-open { to { transform: perspective(900px) rotateY(-105deg); } }
+
+/* partículas */
+@keyframes burst {
+  0% { transform: translate(0, 0) scale(0); opacity: 0; }
+  12% { opacity: 1; transform: translate(calc(var(--dx) * 0.15), calc(var(--dy) * 0.15)) scale(1); }
+  100% { transform: translate(var(--dx), calc(var(--dy) + 140px)) scale(0.3); opacity: 0; }
+}
+
+.fade-up { animation: fade-up 0.7s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .sparkles { display: none; }
+}
