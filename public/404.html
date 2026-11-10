@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>THE GOLDEN SECRET</title>
+    <script>
+      // GitHub Pages no tiene rutas: /dia24 (o /dia23) se redirige a la versión con #.
+      var p = location.pathname.replace(/\/+$/, '');
+      var m = p.match(/^(.*)\/dia24$/);
+      location.replace(m ? m[1] + '/#/dia24' : p.replace(/\/dia23$/, '') + '/');
+    </script>
+  </head>
+  <body style="background:#151515"></body>
+</html>
